@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>Add new vote</title>
+</head>
+<body>
+<div align="center">
+    <h1>New Vote</h1>
+    <br />
+    <form action="#" th:action="@{/save}" th:name="${vote}"
+          method="post">
+
+        <table border="0" cellpadding="10">
+            <tr>
+                <td>Phonenumber:</td>
+                <td><input type="text" th:name="*{phonenumber}" /></td>
+            </tr>
+
+        </table>
+        <input type="radio" name="vote" value="0" th:name="*{value}"> 0<br>
+        <input type="radio" name="vote" value="1" th:name="*{value}"> 1<br>
+        <input type="radio" name="vote" value="2" th:name="*{value}"> 2<br>
+        <input type="radio" name="vote" value="3" th:name="*{value}"> 3<br>
+        <input type="radio" name="vote" value="4" th:name="*{value}"> 4<br>
+        <input type="radio" name="vote" value="5" th:name="*{value}"> 5<br>
+
+        <tr>
+            <td colspan="2"><button type="submit">Save</button> </td>
+        </tr>
+    </form>
+</div>
+
+</body>
+</html>

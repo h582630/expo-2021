@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Admin View</title>
+</head>
+<body>
+<div align="center">
+    <h1>Stand List</h1>
+    <a href="/new">Create New Stand</a>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+        <tr>
+            <th>Group Number</th>
+            <th>Name</th>
+            <th>Voting Score</th>
+            <th>Actions</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="stand : ${listOfStands}">
+            <td th:text="${stand.id}">Group Number</td>
+            <td th:text="${stand.name}">Name</td>
+            <td th:text="${stand.averageVote}">Voting Score</td>
+            <td>
+                <a th:href="@{'/edit/' + ${stand.id}}">Edit</a>
+                &nbsp;&nbsp;&nbsp;
+                <a th:href="@{'/delete/' + ${stand.id}}">Delete</a>
+                &nbsp;&nbsp;&nbsp;
+                <a th:href="@{'/vote/' + ${stand.id}}">Vote</a>
+
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
